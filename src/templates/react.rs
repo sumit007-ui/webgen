@@ -27,7 +27,7 @@ pub fn generate(project_path: &Path) -> Result<()> {
     Ok(())
 }
 
-const PACKAGE_JSON: &str = r#"{
+const PACKAGE_JSON: &str = r###"{
   "name": "react-portfolio",
   "version": "0.1.0",
   "private": true,
@@ -60,9 +60,9 @@ const PACKAGE_JSON: &str = r#"{
     ]
   }
 }
-"#;
+"###;
 
-const PUBLIC_INDEX: &str = r#"<!DOCTYPE html>
+const PUBLIC_INDEX: &str = r###"<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -76,9 +76,9 @@ const PUBLIC_INDEX: &str = r#"<!DOCTYPE html>
     <div id="root"></div>
   </body>
 </html>
-"#;
+"###;
 
-const INDEX_JS: &str = r#"import React from 'react';
+const INDEX_JS: &str = r###"import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './App.css';
 import App from './App';
@@ -89,9 +89,9 @@ root.render(
     <App />
   </React.StrictMode>
 );
-"#;
+"###;
 
-const APP_JS: &str = r#"import React from 'react';
+const APP_JS: &str = r###"import React from 'react';
 import './App.css';
 import Header from './components/Header';
 import Hero from './components/Hero';
@@ -114,9 +114,9 @@ function App() {
 }
 
 export default App;
-"#;
+"###;
 
-const APP_CSS: &str = r#"* {
+const APP_CSS: &str = r###"* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -374,9 +374,9 @@ body {
     gap: 1rem;
   }
 }
-"#;
+"###;
 
-const HEADER_JS: &str = r#"import React from 'react';
+const HEADER_JS: &str = r###"import React from 'react';
 
 function Header() {
   return (
@@ -397,9 +397,9 @@ function Header() {
 }
 
 export default Header;
-"#;
+"###;
 
-const HERO_JS: &str = r#"import React from 'react';
+const HERO_JS: &str = r###"import React from 'react';
 
 function Hero() {
   return (
@@ -417,9 +417,9 @@ function Hero() {
 }
 
 export default Hero;
-"#;
+"###;
 
-const ABOUT_JS: &str = r#"import React from 'react';
+const ABOUT_JS: &str = r###"import React from 'react';
 
 function About() {
   const skills = [
@@ -447,9 +447,9 @@ function About() {
 }
 
 export default About;
-"#;
+"###;
 
-const PROJECTS_JS: &str = r#"import React from 'react';
+const PROJECTS_JS: &str = r###"import React from 'react';
 
 function Projects() {
   const projects = [
@@ -499,9 +499,9 @@ function Projects() {
 }
 
 export default Projects;
-"#;
+"###;
 
-const CONTACT_JS: &str = r#"import React, { useState } from 'react';
+const CONTACT_JS: &str = r###"import React, { useState } from 'react';
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -569,9 +569,9 @@ function Contact() {
 }
 
 export default Contact;
-"#;
+"###;
 
-const FOOTER_JS: &str = r#"import React from 'react';
+const FOOTER_JS: &str = r###"import React from 'react';
 
 function Footer() {
   return (
@@ -584,9 +584,9 @@ function Footer() {
 }
 
 export default Footer;
-"#;
+"###;
 
-const README: &str = r#"# React Portfolio
+const README: &str = r###"# React Portfolio
 
 A modern, responsive portfolio website built with React.
 
@@ -634,9 +634,9 @@ This app can be deployed to:
 ## License
 
 MIT
-"#;
+"###;
 
-const GITIGNORE: &str = r#"# Dependencies
+const GITIGNORE: &str = r###"# Dependencies
 /node_modules
 /.pnp
 .pnp.js
@@ -657,4 +657,6 @@ const GITIGNORE: &str = r#"# Dependencies
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-"#;
+"###;
+
+

@@ -29,7 +29,7 @@ pub fn generate(project_path: &Path) -> Result<()> {
     Ok(())
 }
 
-const APP_PY: &str = r#"from flask import Flask, render_template, request, jsonify
+const APP_PY: &str = r###"from flask import Flask, render_template, request, jsonify
 import os
 
 app = Flask(__name__)
@@ -70,13 +70,13 @@ def contact():
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=5000)
-"#;
+"###;
 
-const REQUIREMENTS: &str = r#"Flask==3.0.0
+const REQUIREMENTS: &str = r###"Flask==3.0.0
 gunicorn==21.2.0
-"#;
+"###;
 
-const BASE_HTML: &str = r#"<!DOCTYPE html>
+const BASE_HTML: &str = r###"<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -112,9 +112,9 @@ const BASE_HTML: &str = r#"<!DOCTYPE html>
     <script src="{{ url_for('static', filename='js/main.js') }}"></script>
 </body>
 </html>
-"#;
+"###;
 
-const INDEX_HTML: &str = r#"{% extends "base.html" %}
+const INDEX_HTML: &str = r###"{% extends "base.html" %}
 
 {% block title %}Home - Portfolio{% endblock %}
 
@@ -154,9 +154,9 @@ const INDEX_HTML: &str = r#"{% extends "base.html" %}
     </div>
 </section>
 {% endblock %}
-"#;
+"###;
 
-const ABOUT_HTML: &str = r#"{% extends "base.html" %}
+const ABOUT_HTML: &str = r###"{% extends "base.html" %}
 
 {% block title %}About - Portfolio{% endblock %}
 
@@ -178,9 +178,9 @@ const ABOUT_HTML: &str = r#"{% extends "base.html" %}
     </div>
 </section>
 {% endblock %}
-"#;
+"###;
 
-const PROJECTS_HTML: &str = r#"{% extends "base.html" %}
+const PROJECTS_HTML: &str = r###"{% extends "base.html" %}
 
 {% block title %}Projects - Portfolio{% endblock %}
 
@@ -205,9 +205,9 @@ const PROJECTS_HTML: &str = r#"{% extends "base.html" %}
     </div>
 </section>
 {% endblock %}
-"#;
+"###;
 
-const CONTACT_HTML: &str = r#"{% extends "base.html" %}
+const CONTACT_HTML: &str = r###"{% extends "base.html" %}
 
 {% block title %}Contact - Portfolio{% endblock %}
 
@@ -238,9 +238,9 @@ const CONTACT_HTML: &str = r#"{% extends "base.html" %}
     </div>
 </section>
 {% endblock %}
-"#;
+"###;
 
-const STYLE_CSS: &str = r#"* {
+const STYLE_CSS: &str = r###"* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -528,9 +528,9 @@ footer {
         gap: 1rem;
     }
 }
-"#;
+"###;
 
-const MAIN_JS: &str = r#"// Main JavaScript file
+const MAIN_JS: &str = r###"// Main JavaScript file
 
 document.addEventListener('DOMContentLoaded', function() {
     // Handle contact form submission
@@ -575,9 +575,9 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
-"#;
+"###;
 
-const README: &str = r#"# Flask Portfolio Website
+const README: &str = r###"# Flask Portfolio Website
 
 A modern, responsive portfolio website built with Flask.
 
@@ -626,9 +626,9 @@ This app can be deployed to:
 ## License
 
 MIT
-"#;
+"###;
 
-const GITIGNORE: &str = r#"# Python
+const GITIGNORE: &str = r###"# Python
 __pycache__/
 *.py[cod]
 *$py.class
@@ -652,4 +652,7 @@ instance/
 # OS
 .DS_Store
 Thumbs.db
-"#;
+"###;
+
+
+

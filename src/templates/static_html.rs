@@ -12,7 +12,7 @@ pub fn generate(project_path: &Path) -> Result<()> {
     Ok(())
 }
 
-const INDEX_HTML: &str = r#"<!DOCTYPE html>
+const INDEX_HTML: &str = r##"<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -21,7 +21,6 @@ const INDEX_HTML: &str = r#"<!DOCTYPE html>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <!-- Navigation -->
     <nav class="navbar">
         <div class="container">
             <div class="logo">My Portfolio</div>
@@ -39,11 +38,10 @@ const INDEX_HTML: &str = r#"<!DOCTYPE html>
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="container">
             <h1 class="hero-title">Hi, I'm Your Name</h1>
-            <p class="hero-subtitle">Full Stack Developer | Designer | Creator</p>
+            <p class="hero-subtitle">Full Stack Developer</p>
             <div class="hero-buttons">
                 <a href="#projects" class="btn btn-primary">View Projects</a>
                 <a href="#contact" class="btn btn-secondary">Get in Touch</a>
@@ -51,7 +49,6 @@ const INDEX_HTML: &str = r#"<!DOCTYPE html>
         </div>
     </section>
 
-    <!-- About Section -->
     <section class="about" id="about">
         <div class="container">
             <h2 class="section-title">About Me</h2>
@@ -74,13 +71,12 @@ const INDEX_HTML: &str = r#"<!DOCTYPE html>
                 <div class="skill-card">
                     <div class="skill-icon">🛠️</div>
                     <h3>Tools</h3>
-                    <p>Git, Docker, AWS, CI/CD</p>
+                    <p>Git, Docker, AWS</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Projects Section -->
     <section class="projects" id="projects">
         <div class="container">
             <h2 class="section-title">My Projects</h2>
@@ -93,33 +89,30 @@ const INDEX_HTML: &str = r#"<!DOCTYPE html>
                         <span class="tag">CSS</span>
                         <span class="tag">JavaScript</span>
                     </div>
-                    <a href="https://github.com/yourusername/project1" class="btn btn-primary" target="_blank">View on GitHub</a>
+                    <a href="https://github.com" class="btn btn-primary">View</a>
                 </div>
                 <div class="project-card">
                     <h3>Project 2</h3>
-                    <p>An awesome web application with great features</p>
+                    <p>An awesome web application</p>
                     <div class="tech-tags">
                         <span class="tag">React</span>
                         <span class="tag">Node.js</span>
-                        <span class="tag">MongoDB</span>
                     </div>
-                    <a href="https://github.com/yourusername/project2" class="btn btn-primary" target="_blank">View on GitHub</a>
+                    <a href="https://github.com" class="btn btn-primary">View</a>
                 </div>
                 <div class="project-card">
                     <h3>Project 3</h3>
-                    <p>A modern responsive website design</p>
+                    <p>A modern responsive website</p>
                     <div class="tech-tags">
                         <span class="tag">Vue</span>
                         <span class="tag">Firebase</span>
-                        <span class="tag">Tailwind</span>
                     </div>
-                    <a href="https://github.com/yourusername/project3" class="btn btn-primary" target="_blank">View on GitHub</a>
+                    <a href="https://github.com" class="btn btn-primary">View</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
     <section class="contact" id="contact">
         <div class="container">
             <h2 class="section-title">Get In Touch</h2>
@@ -139,14 +132,13 @@ const INDEX_HTML: &str = r#"<!DOCTYPE html>
                 <button type="submit" class="btn btn-primary">Send Message</button>
             </form>
             <div class="social-links">
-                <a href="https://github.com/yourusername" target="_blank">GitHub</a>
-                <a href="https://linkedin.com/in/yourusername" target="_blank">LinkedIn</a>
-                <a href="https://twitter.com/yourusername" target="_blank">Twitter</a>
+                <a href="https://github.com">GitHub</a>
+                <a href="https://linkedin.com">LinkedIn</a>
+                <a href="https://twitter.com">Twitter</a>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <p>&copy; 2024 My Portfolio. All rights reserved.</p>
@@ -156,9 +148,9 @@ const INDEX_HTML: &str = r#"<!DOCTYPE html>
     <script src="js/main.js"></script>
 </body>
 </html>
-"#;
+"##;
 
-const STYLE_CSS: &str = r#"* {
+const STYLE_CSS: &str = r##"* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -169,7 +161,6 @@ const STYLE_CSS: &str = r#"* {
     --secondary: #8b5cf6;
     --dark: #1e293b;
     --light: #f8fafc;
-    --gray: #64748b;
 }
 
 html {
@@ -177,7 +168,7 @@ html {
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: system-ui, -apple-system, sans-serif;
     line-height: 1.6;
     color: var(--dark);
     background: var(--light);
@@ -493,145 +484,79 @@ body {
         align-items: center;
     }
 }
-"#;
+"##;
 
-const MAIN_JS: &str = r#"// Mobile menu toggle
-const hamburger = document.getElementById('hamburger');
+const MAIN_JS: &str = r##"const hamburger = document.getElementById('hamburger');
 const navMenu = document.getElementById('navMenu');
 
 hamburger.addEventListener('click', () => {
     navMenu.classList.toggle('active');
 });
 
-// Close mobile menu when clicking on a link
-document.querySelectorAll('.nav-menu a').forEach(link => {
-    link.addEventListener('click', () => {
-        navMenu.classList.remove('active');
-    });
-});
-
-// Contact form handling
 const contactForm = document.getElementById('contactForm');
 
 contactForm.addEventListener('submit', (e) => {
     e.preventDefault();
-    
-    const formData = {
-        name: contactForm.name.value,
-        email: contactForm.email.value,
-        message: contactForm.message.value
-    };
-    
-    // Here you would typically send the form data to a server
-    console.log('Form submitted:', formData);
-    alert('Message sent! (This is a demo)');
-    
-    // Reset form
+    alert('Message sent! (Demo)');
     contactForm.reset();
 });
 
-// Smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
         if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
+            target.scrollIntoView({ behavior: 'smooth' });
         }
     });
 });
+"##;
 
-// Add scroll-based animations
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-};
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.animation = 'fadeInUp 0.6s ease-out forwards';
-        }
-    });
-}, observerOptions);
-
-// Observe all sections
-document.querySelectorAll('section').forEach(section => {
-    observer.observe(section);
-});
-"#;
-
-const README: &str = r#"# Static HTML Portfolio
+const README: &str = r##"# Static HTML Portfolio
 
 A modern, responsive portfolio website built with pure HTML, CSS, and JavaScript.
-
-## Features
-
-- 🎨 Clean and modern design
-- 📱 Fully responsive
-- ⚡ Fast loading (no framework overhead)
-- 🎭 Smooth animations
-- 📱 Mobile-friendly navigation
-- 📧 Contact form
-
-## Structure
-
-```
-├── index.html      # Main HTML file
-├── css/
-│   └── style.css   # Stylesheet
-├── js/
-│   └── main.js     # JavaScript file
-└── README.md
-```
 
 ## Getting Started
 
 Simply open `index.html` in your web browser!
 
-For development with live reload, you can use:
+For development:
 
-### Using Python
 ```bash
 python -m http.server 8000
 ```
 
-### Using Node.js
-```bash
-npx serve
-```
+Then open http://localhost:8000
 
-Then open [http://localhost:8000](http://localhost:8000)
+## Structure
+
+```
+├── index.html
+├── css/
+│   └── style.css
+└── js/
+    └── main.js
+```
 
 ## Customization
 
-1. **Content**: Edit `index.html` to update your personal information
-2. **Styling**: Modify `css/style.css` to change colors, fonts, and layout
-3. **Behavior**: Update `js/main.js` for interactive features
+1. Edit `index.html` to update your information
+2. Modify `css/style.css` for styling
+3. Update `js/main.js` for behavior
 
 ## Deploy
 
-Deploy to any static hosting service:
-- **GitHub Pages**: Push to `gh-pages` branch
-- **Netlify**: Drop the folder or connect your repo
-- **Vercel**: Import your project
-- **Any web server**: Upload files via FTP
+Deploy to:
+- GitHub Pages
+- Netlify
+- Vercel
+- Any static hosting
 
-## No Build Required!
-
-This is pure HTML/CSS/JS - no build process, no dependencies, no node_modules!
+No build required!
 
 ## License
 
 MIT
-"#;
+"##;
 
-const GITIGNORE: &str = r#".DS_Store
-Thumbs.db
-*.log
-.vscode/
-.idea/
-"#;
+const GITIGNORE: &str = ".DS_Store\nThumbs.db\n*.log\n";

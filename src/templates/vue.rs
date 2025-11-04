@@ -18,7 +18,7 @@ pub fn generate(project_path: &Path) -> Result<()> {
     Ok(())
 }
 
-const PACKAGE_JSON: &str = r#"{
+const PACKAGE_JSON: &str = r###"{
   "name": "vue-portfolio",
   "version": "0.1.0",
   "private": true,
@@ -35,17 +35,17 @@ const PACKAGE_JSON: &str = r#"{
     "vite": "^5.0.0"
   }
 }
-"#;
+"###;
 
-const VITE_CONFIG: &str = r#"import { defineConfig } from 'vite'
+const VITE_CONFIG: &str = r###"import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 
 export default defineConfig({
   plugins: [vue()],
 })
-"#;
+"###;
 
-const INDEX_HTML: &str = r#"<!DOCTYPE html>
+const INDEX_HTML: &str = r###"<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8">
@@ -58,16 +58,16 @@ const INDEX_HTML: &str = r#"<!DOCTYPE html>
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
-"#;
+"###;
 
-const MAIN_JS: &str = r#"import { createApp } from 'vue'
+const MAIN_JS: &str = r###"import { createApp } from 'vue'
 import './style.css'
 import App from './App.vue'
 
 createApp(App).mount('#app')
-"#;
+"###;
 
-const APP_VUE: &str = r#"<template>
+const APP_VUE: &str = r###"<template>
   <div id="app">
     <nav class="navbar">
       <div class="container">
@@ -106,9 +106,9 @@ export default {
   }
 }
 </script>
-"#;
+"###;
 
-const STYLE_CSS: &str = r#"* {
+const STYLE_CSS: &str = r###"* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -330,9 +330,9 @@ body {
     gap: 1rem;
   }
 }
-"#;
+"###;
 
-const HERO_VUE: &str = r#"<template>
+const HERO_VUE: &str = r###"<template>
   <section class="hero" id="hero">
     <div class="container">
       <h1>Hi, I'm Your Name</h1>
@@ -350,9 +350,9 @@ export default {
   name: 'Hero'
 }
 </script>
-"#;
+"###;
 
-const ABOUT_VUE: &str = r#"<template>
+const ABOUT_VUE: &str = r###"<template>
   <section class="about" id="about">
     <div class="container">
       <h2>About Me</h2>
@@ -381,9 +381,9 @@ export default {
   }
 }
 </script>
-"#;
+"###;
 
-const PROJECTS_VUE: &str = r#"<template>
+const PROJECTS_VUE: &str = r###"<template>
   <section class="projects" id="projects">
     <div class="container">
       <h2>My Projects</h2>
@@ -430,9 +430,9 @@ export default {
   }
 }
 </script>
-"#;
+"###;
 
-const README: &str = r#"# Vue Portfolio
+const README: &str = r###"# Vue Portfolio
 
 A modern, responsive portfolio website built with Vue.js 3 and Vite.
 
@@ -486,9 +486,9 @@ This app can be deployed to:
 ## License
 
 MIT
-"#;
+"###;
 
-const GITIGNORE: &str = r#"# Logs
+const GITIGNORE: &str = r###"# Logs
 logs
 *.log
 npm-debug.log*
@@ -512,4 +512,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
-"#;
+"###;
+
+

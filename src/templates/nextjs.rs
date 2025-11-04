@@ -18,7 +18,7 @@ pub fn generate(project_path: &Path) -> Result<()> {
     Ok(())
 }
 
-const PACKAGE_JSON: &str = r#"{
+const PACKAGE_JSON: &str = r###"{
   "name": "nextjs-app",
   "version": "0.1.0",
   "private": true,
@@ -38,26 +38,26 @@ const PACKAGE_JSON: &str = r#"{
     "eslint-config-next": "14.0.0"
   }
 }
-"#;
+"###;
 
-const NEXT_CONFIG: &str = r#"/** @type {import('next').NextConfig} */
+const NEXT_CONFIG: &str = r###"/** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
 }
 
 module.exports = nextConfig
-"#;
+"###;
 
-const APP_JS: &str = r#"import '../styles/globals.css'
+const APP_JS: &str = r###"import '../styles/globals.css'
 
 function MyApp({ Component, pageProps }) {
   return <Component {...pageProps} />
 }
 
 export default MyApp
-"#;
+"###;
 
-const INDEX_JS: &str = r#"import Layout from '../components/Layout'
+const INDEX_JS: &str = r###"import Layout from '../components/Layout'
 
 export default function Home() {
   return (
@@ -92,9 +92,9 @@ export default function Home() {
     </Layout>
   )
 }
-"#;
+"###;
 
-const ABOUT_JS: &str = r#"import Layout from '../components/Layout'
+const ABOUT_JS: &str = r###"import Layout from '../components/Layout'
 
 export default function About() {
   return (
@@ -115,17 +115,17 @@ export default function About() {
     </Layout>
   )
 }
-"#;
+"###;
 
-const API_HELLO: &str = r#"export default function handler(req, res) {
+const API_HELLO: &str = r###"export default function handler(req, res) {
   res.status(200).json({ 
     message: 'Hello from Next.js API!',
     timestamp: new Date().toISOString()
   })
 }
-"#;
+"###;
 
-const GLOBALS_CSS: &str = r#"* {
+const GLOBALS_CSS: &str = r###"* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -294,9 +294,9 @@ body {
     gap: 1rem;
   }
 }
-"#;
+"###;
 
-const LAYOUT: &str = r#"export default function Layout({ children }) {
+const LAYOUT: &str = r###"export default function Layout({ children }) {
   return (
     <>
       <nav className="navbar">
@@ -314,9 +314,9 @@ const LAYOUT: &str = r#"export default function Layout({ children }) {
     </>
   )
 }
-"#;
+"###;
 
-const README: &str = r#"# Next.js Application
+const README: &str = r###"# Next.js Application
 
 A modern web application built with Next.js.
 
@@ -362,9 +362,9 @@ Deploy easily to Vercel, Netlify, or any Node.js hosting platform.
 ## License
 
 MIT
-"#;
+"###;
 
-const GITIGNORE: &str = r#"# Dependencies
+const GITIGNORE: &str = r###"# Dependencies
 /node_modules
 /.pnp
 .pnp.js
@@ -393,4 +393,6 @@ yarn-error.log*
 
 # Vercel
 .vercel
-"#;
+"###;
+
+

@@ -26,7 +26,7 @@ pub fn generate(project_path: &Path) -> Result<()> {
     Ok(())
 }
 
-const ROOT_README: &str = r#"# MERN Stack Application
+const ROOT_README: &str = r###"# MERN Stack Application
 
 Full-stack application built with MongoDB, Express, React, and Node.js.
 
@@ -86,9 +86,9 @@ JWT_SECRET=your_secret_key
 ## License
 
 MIT
-"#;
+"###;
 
-const BACKEND_PACKAGE: &str = r#"{
+const BACKEND_PACKAGE: &str = r###"{
   "name": "mern-backend",
   "version": "1.0.0",
   "description": "Express backend for MERN app",
@@ -109,9 +109,9 @@ const BACKEND_PACKAGE: &str = r#"{
     "nodemon": "^3.0.1"
   }
 }
-"#;
+"###;
 
-const SERVER_JS: &str = r#"const express = require('express');
+const SERVER_JS: &str = r###"const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 require('dotenv').config();
@@ -141,14 +141,14 @@ app.get('/', (req, res) => {
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
-"#;
+"###;
 
-const ENV_EXAMPLE: &str = r#"MONGODB_URI=mongodb://localhost:27017/myapp
+const ENV_EXAMPLE: &str = r###"MONGODB_URI=mongodb://localhost:27017/myapp
 PORT=5000
 JWT_SECRET=your_secret_key_here
-"#;
+"###;
 
-const USER_MODEL: &str = r#"const mongoose = require('mongoose');
+const USER_MODEL: &str = r###"const mongoose = require('mongoose');
 
 const userSchema = new mongoose.Schema({
   name: {
@@ -171,9 +171,9 @@ const userSchema = new mongoose.Schema({
 });
 
 module.exports = mongoose.model('User', userSchema);
-"#;
+"###;
 
-const API_ROUTES: &str = r#"const express = require('express');
+const API_ROUTES: &str = r###"const express = require('express');
 const router = express.Router();
 const User = require('../models/User');
 
@@ -212,9 +212,9 @@ router.get('/data', (req, res) => {
 });
 
 module.exports = router;
-"#;
+"###;
 
-const FRONTEND_PACKAGE: &str = r#"{
+const FRONTEND_PACKAGE: &str = r###"{
   "name": "mern-frontend",
   "version": "0.1.0",
   "private": true,
@@ -249,9 +249,9 @@ const FRONTEND_PACKAGE: &str = r#"{
     ]
   }
 }
-"#;
+"###;
 
-const FRONTEND_INDEX: &str = r#"<!DOCTYPE html>
+const FRONTEND_INDEX: &str = r###"<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -265,9 +265,9 @@ const FRONTEND_INDEX: &str = r#"<!DOCTYPE html>
     <div id="root"></div>
   </body>
 </html>
-"#;
+"###;
 
-const FRONTEND_INDEX_JS: &str = r#"import React from 'react';
+const FRONTEND_INDEX_JS: &str = r###"import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './App.css';
 import App from './App';
@@ -278,9 +278,9 @@ root.render(
     <App />
   </React.StrictMode>
 );
-"#;
+"###;
 
-const FRONTEND_APP: &str = r#"import React, { useState, useEffect } from 'react';
+const FRONTEND_APP: &str = r###"import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './App.css';
 
@@ -338,9 +338,9 @@ function App() {
 }
 
 export default App;
-"#;
+"###;
 
-const FRONTEND_CSS: &str = r#".App {
+const FRONTEND_CSS: &str = r###".App {
   text-align: center;
   min-height: 100vh;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -411,9 +411,9 @@ const FRONTEND_CSS: &str = r#".App {
     width: 90%;
   }
 }
-"#;
+"###;
 
-const GITIGNORE: &str = r#"# Dependencies
+const GITIGNORE: &str = r###"# Dependencies
 node_modules/
 /backend/node_modules
 /frontend/node_modules
@@ -432,4 +432,6 @@ node_modules/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-"#;
+"###;
+
+
