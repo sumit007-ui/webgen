@@ -1,0 +1,19 @@
+[package]
+name = "web-template-cli"
+version = "0.1.0"
+edition = "2021"
+authors = ["sumit007-ui"]
+description = "A CLI tool to generate pre-built website templates for various tech stacks"
+license = "MIT"
+
+[[bin]]
+name = "webgen"
+path = "src/main.rs"
+
+[dependencies]
+clap = { version = "4.4", features = ["derive"] }
+colored = "2.1"
+dialoguer = "0.11"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+anyhow = "1.0"
